@@ -51,7 +51,7 @@ const Home = () => {
                     </div>
                     <ul className="nav-menu">
                         <li><a href="/" className="active">Home</a></li>
-                        <li><a href="/AboutUs">About</a></li>
+                        <li><a href="/about">About</a></li>
                         <li><a href="/services">Services</a></li>
                         <li><a href="/pages">Pages</a></li>
                         <li><a href="/blog">Blog</a></li>
