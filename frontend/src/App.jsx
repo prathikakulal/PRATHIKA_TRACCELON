@@ -44,13 +44,18 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </BrowserRouter>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<Home />} />
+    //     <Route path="/about" element={<AboutUs />} />
+    //     <Route path="/contact" element={<Contact />} />
+    //   </Routes>
+    // </BrowserRouter>
+    <>
+        <Home/>
+        <AboutUs/>
+        <Contact/>
+    </>
   );
 }
 
