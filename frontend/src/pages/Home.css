@@ -1,0 +1,928 @@
+/* Home.css - Updated with darker blue and improved Forensic Box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+.forensic-theme {
+    background-color: #f8fafc;
+    position: relative;
+    min-height: 100vh;
+}
+
+.background-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(30, 58, 138, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 58, 138, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.home-container {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Terminal Window Styles */
+.terminal-window {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -15px rgba(30, 58, 138, 0.2);
+    margin-bottom: 2rem;
+}
+
+.terminal-window.forensic-box {
+    max-width: 100%;
+    margin: 2rem 0;
+    border: 1px solid #1e3a8a;
+    box-shadow: 0 25px 50px -12px rgba(30, 58, 138, 0.25);
+}
+
+.terminal-header {
+    background: #f1f5f9;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.window-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-right: 1rem;
+}
+
+.control-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.control-dot.blue {
+    background: #1e3a8a;
+}
+
+.control-dot.light-blue {
+    background: #3b82f6;
+}
+
+.control-dot.white {
+    background: #94a3b8;
+}
+
+.terminal-title {
+    color: #1e3a8a;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    flex: 1;
+}
+
+.terminal-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #1e3a8a;
+}
+
+.status-indicator.active {
+    animation: pulse 1.5s infinite;
+}
+
+.status-text {
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.scanline {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #1e3a8a, transparent);
+    animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Top Bar */
+.top-bar {
+    padding: 1rem 0;
+    border-bottom: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prompt {
+    color: #1e3a8a;
+    margin-right: 0.5rem;
+    font-weight: 600;
+}
+
+.welcome-text {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.get-in-touch {
+    color: #1e3a8a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.get-in-touch:hover {
+    text-decoration: underline;
+}
+
+/* Main Navigation */
+.main-nav {
+    padding: 1.5rem 0;
+    background: #ffffff;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.logo-bracket {
+    color: #1e3a8a;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #1e3a8a;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 1rem 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 2.5rem;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.terminal-prompt {
+    margin-bottom: 1.5rem;
+    color: #94a3b8;
+    font-family: 'Courier New', monospace;
+}
+
+.prompt-symbol {
+    color: #1e3a8a;
+    margin-right: 0.5rem;
+    font-weight: 600;
+}
+
+.prompt-command {
+    color: #1e293b;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+}
+
+.highlight {
+    color: #1e3a8a;
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-description {
+    color: #475569;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.description-meta {
+    color: #1e3a8a;
+    margin-right: 0.5rem;
+    font-weight: 600;
+}
+
+/* Buttons */
+.hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.9rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+    box-shadow: 0 4px 6px rgba(30, 58, 138, 0.2);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(30, 58, 138, 0.3);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #1e3a8a;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.5rem;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-ghost:hover {
+    background: #f8fafc;
+    border-color: #1e3a8a;
+}
+
+/* Hero Visual */
+.hero-visual {
+    flex: 1;
+}
+
+.visual-container {
+    width: 100%;
+    height: 450px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem;
+}
+
+/* Graph Container */
+.graph-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-top: 20px;
+}
+
+.y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 10px;
+    color: #94a3b8;
+    font-size: 0.7rem;
+    height: 100%;
+    text-align: right;
+}
+
+.graph {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 100%;
+    gap: 10px;
+    position: relative;
+}
+
+.bar {
+    width: 40px;
+    background: linear-gradient(180deg, #1e3a8a 0%, #3b82f6 100%);
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    transition: height 0.3s ease;
+    cursor: pointer;
+}
+
+.bar::after {
+    content: attr(data-ip);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #475569;
+    font-size: 0.65rem;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+/* Forensic Section - IMPROVED */
+.forensic-section {
+    padding: 1rem 0 3rem;
+}
+
+.forensic-box .forensic-content {
+    padding: 2.5rem;
+}
+
+.link-generator {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.input-label {
+    color: #1e3a8a;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.label-icon {
+    color: #1e3a8a;
+    font-size: 1.2rem;
+}
+
+.terminal-input {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    padding: 1.2rem;
+    color: #1e293b;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.terminal-input:focus {
+    outline: none;
+    border-color: #1e3a8a;
+    box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.1);
+}
+
+.generate-btn {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    border: none;
+    color: white;
+    padding: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    border-radius: 12px;
+    width: 100%;
+    letter-spacing: 0.5px;
+}
+
+.generate-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
+}
+
+.generate-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Status Grid */
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #cbd5e1;
+}
+
+.status-dot.active {
+    background: #1e3a8a;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+    animation: pulse 1.5s infinite;
+}
+
+.status-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.status-name {
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+.status-state {
+    color: #1e3a8a;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Quick Stats */
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding-top: 2rem;
+    border-top: 2px dashed #e2e8f0;
+}
+
+.quick-stat {
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8fafc, #ffffff);
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.quick-stat .stat-label {
+    display: block;
+    color: #1e3a8a;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.quick-stat .stat-desc {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+/* Features Section */
+.features-section {
+    padding: 2rem 0 3rem;
+}
+
+.features-header {
+    margin-bottom: 2rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.feature-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.feature-card:hover {
+    border-color: #1e3a8a;
+    box-shadow: 0 20px 40px -15px rgba(30, 58, 138, 0.2);
+    transform: translateY(-5px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-badge {
+    color: #1e3a8a;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: #eef2ff;
+    padding: 0.35rem 1rem;
+    border-radius: 6px;
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #eef2ff, #ffffff);
+    border-radius: 12px;
+}
+
+.card-title {
+    color: #0f172a;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.card-description {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.status-badge {
+    color: #1e3a8a;
+    font-size: 0.85rem;
+    padding: 0.35rem 1rem;
+    border: 1px solid #1e3a8a;
+    border-radius: 6px;
+    background: #eef2ff;
+}
+
+.metrics {
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Bottom Credits */
+.bottom-credits {
+    text-align: center;
+    padding: 2rem 0;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-content {
+        gap: 2rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .status-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .quick-stat .stat-label {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .nav-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .quick-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ============================================================
+   FORENSIC SECTION – CSS CHANGES TO ADD / REPLACE IN Home.css
+   ============================================================ */
+
+/* 1. REPLACE the existing .forensic-box .forensic-content rule */
+.forensic-box .forensic-content {
+    padding: 0;
+    /* remove old padding — inner layout handles spacing */
+}
+
+/* 2. ADD: two-column layout inside forensic-content (mirrors hero-content) */
+.forensic-content-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+    padding: 2.5rem;
+}
+
+/* left column — heading + description + map (same as hero-text) */
+.forensic-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* right column — form/generator panel (same width as hero-visual) */
+.forensic-right {
+    flex: 1;
+}
+
+/* 3. REPLACE .link-generator — remove its own flex column gap, 
+       the right column handles spacing now */
+.link-generator {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* was 2rem — slightly tighter to fit column */
+}
+
+/* 4. ADD: badge label above heading (matches .terminal-prompt style) */
+.forensic-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #eef2ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    ;
+    color: #1e3a8a;
+}
+
+.forensic-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #1e3a8a;
+}
+
+/* 5. ADD: heading style to match .hero-title */
+.forensic-heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #0f172a;
+}
+
+.forensic-heading strong {
+    color: #1e3a8a;
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 6. ADD: subtext to match .hero-description */
+.forensic-subtext {
+    color: #475569;
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 460px;
+}
+
+/* 7. KEEP .status-grid but fix column count to always be 1-per-row on narrow */
+/* Already fine at 3 cols — no change needed unless you want 2:
+   grid-template-columns: repeat(2, 1fr);  */
+
+/* 8. RESPONSIVE — stack columns on tablet/mobile (matches hero breakpoints) */
+@media (max-width: 768px) {
+    .forensic-content-inner {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .forensic-heading {
+        font-size: 1.8rem;
+    }
+
+    .status-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .quick-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Add these rules to Home.css — only 2 new classes needed */
+
+.hero-link-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 0.4rem 0.4rem 0.4rem 1rem;
+    transition: border-color 0.2s;
+}
+
+.hero-link-bar:focus-within {
+    border-color: #1e3a8a;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.08);
+}
+
+.hero-link-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #1e293b;
+}
+
+.hero-link-input::placeholder {
+    color: #b0bace;
+}
+
+.hero-link-btn {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 0.6rem 1.2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.hero-link-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+    transform: translateY(-1px);
+}
+
+.hero-link-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
